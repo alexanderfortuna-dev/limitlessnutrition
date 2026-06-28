@@ -1,0 +1,13 @@
+# Downloaded / generated image assets (regenerate via the pipeline scripts)
+images/
+images_clean/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / editor cruft
+.DS_Store
+*.swp

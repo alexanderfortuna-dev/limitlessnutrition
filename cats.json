@@ -1,0 +1,62 @@
+[
+{
+"k": "whey",
+"n": "Whey Protein",
+"g": "massa"
+},
+{
+"k": "gainer",
+"n": "Mass Gainer",
+"g": "massa"
+},
+{
+"k": "preworkout",
+"n": "Pre-Workout",
+"g": "performa"
+},
+{
+"k": "amino",
+"n": "BCAA & Asam Amino",
+"g": "pemulihan"
+},
+{
+"k": "creatine",
+"n": "Creatine",
+"g": "performa"
+},
+{
+"k": "vitamin",
+"n": "Vitamin & Mineral",
+"g": "kesehatan"
+},
+{
+"k": "fatburner",
+"n": "Fat Burner",
+"g": "diet"
+},
+{
+"k": "bar",
+"n": "Protein Bar & Snack",
+"g": "diet"
+},
+{
+"k": "joint",
+"n": "Kesehatan Sendi",
+"g": "kesehatan"
+},
+{
+"k": "omega",
+"n": "Omega & Fish Oil",
+"g": "kesehatan"
+},
+{
+"k": "gear",
+"n": "Aksesoris Gym",
+"g": "performa"
+},
+{
+"k": "isotonik",
+"n": "Minuman Isotonik",
+"g": "performa"
+}
+]
