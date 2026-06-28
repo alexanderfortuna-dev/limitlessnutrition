@@ -747,8 +747,10 @@ const CONFIG = {
   waAdmins:["628989755534","6289518200002","6281339229918"],
   couriers:["Gojek","Grab","Maxim","Kurir Reguler (JNE/J&T/SiCepat)"],
   branches:[
-    {n:"Cabang Sanur (Pusat)", a:"", wa:""}
-    // Tambah cabang lain: {n:"Cabang Denpasar", a:"Jl. ...", wa:"628xxxxxxxxxx"}
+    {n:"Cabang Sanur (Pusat)",   a:"", wa:""},
+    {n:"Cabang 2 — (isi nama)",  a:"", wa:""},
+    {n:"Cabang 3 — (isi nama)",  a:"", wa:""}
+    // isi a:"alamat" dan wa:"628xxxx" tiap cabang; pickup -> WA cabang, delivery -> pool admin
   ],
   payEndpoint:"",      // isi URL gateway (Xendit/Midtrans/n8n) -> payOnline() aktif
   analyticsId:"",      // isi GA4 ID "G-XXXX" atau Meta Pixel ID -> snippet di-inject; kosong = tidak ada
@@ -761,12 +763,14 @@ const CATS = /*__CATS__*/[];
 const CLEAN_BUILD = /*__CLEAN__*/false;
 
 const GOALS = [
-  {g:"massa",     n:"Naik Massa / Bulking"},
-  {g:"diet",      n:"Diet / Cutting"},
-  {g:"performa",  n:"Energi & Performa"},
-  {g:"pemulihan", n:"Pemulihan / Recovery"},
-  {g:"kesehatan", n:"Kesehatan Umum"}
+  {g:"otot",       n:"💪 Otot & Massa"},
+  {g:"stamina",    n:"🛡️ Stamina & Imun"},
+  {g:"berat",      n:"⚖️ Turun Berat"},
+  {g:"kecantikan", n:"✨ Kulit & Kecantikan"},
+  {g:"pria",       n:"🔥 Performa Pria"},
+  {g:"homegym",    n:"🏋️ Home Gym & Alat"}
 ];
+const QGOALS = ["Whey Protein","Pre-Workout","BCAA","Vitamin","Kreatin","Collagen"];
 const PAY_BADGES = ["QRIS","GoPay","OVO","DANA","ShopeePay","BCA VA","COD"];
 const BENEFITS = ["100% Original bersegel","BPOM & Halal MUI","Garansi 30 hari"];
 const PAGE = 20;
@@ -1218,7 +1222,7 @@ function buildStatic(){
 
   // mega cats + quick + goals
   document.getElementById("megaCats").innerHTML = CATS.filter(c=>c.count).map(c=>`<button onclick="filterByCat('${c.k}');closeMega();scrollToGrid()"><span class="cn">${esc(c.n)}</span><span class="cc">${c.count}</span></button>`).join("");
-  document.getElementById("megaQuick").innerHTML = ["Whey","Creatine","Pre-Workout","Vitamin","Mass Gainer","BCAA"].map(q=>`<button class="pill" onclick="runSearch('${q}');closeMega()">${q}</button>`).join("");
+  document.getElementById("megaQuick").innerHTML = QGOALS.map(q=>`<button class="pill" onclick="runSearch('${q}');closeMega()">${q}</button>`).join("");
   document.getElementById("megaGoals").innerHTML = GOALS.map(g=>{
     const n = PRODUCTS.filter(p=>(CATS.find(c=>c.k===p.k)||{}).g===g.g).length;
     return `<button onclick="filterByGoal('${g.g}');closeMega();scrollToGrid()"><span class="cn">${esc(g.n)}</span><span class="cc">${n}</span></button>`;

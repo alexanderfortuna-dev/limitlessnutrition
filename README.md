@@ -38,9 +38,14 @@ Array of objects, one per product:
 If `price` is absent the card shows **“Chat untuk harga”** and the item is
 excluded from the cart subtotal (admin confirms total on WhatsApp).
 
-> The repo ships with a **demo dataset** (140 products) auto-seeded on first run.
-> Replace `products.json` + `cats.json` with your real export (2,523 products) and
-> re-run — nothing else changes.
+> The repo ships with the **real catalogue** (2,523 products in `products.json`,
+> 12 categories in `cats.json`). To refresh, replace those JSON files and re-run
+> the generator — nothing else changes. If `products.json` is deleted, the
+> generator falls back to auto-seeding a small demo dataset so it still builds.
+>
+> Prices are not in the source data yet, so every card shows **“Chat untuk
+> harga.”** Add `price` (and optional `compareAt`) to products in `products.json`
+> and rebuild to activate the price layer + cart subtotal.
 
 ### Image pipeline (optional, for `index-clean.html`)
 
